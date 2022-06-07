@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <center>
-        <b>My Site</b>
-        <div id="popup-element" style="text-align: center;"></div>
-        <div>Another ione</div>
-    </center>
-    <script src="./component.js" type="module"></script>
+
+<body style="background-color: lightgray;">
+
+    <!-- default Values -->
+    <cookie-popover coo-name="abhi" coo-value="1" coo-days=60 coo-listen="cookieListen();" ></cookie-popover>
+
+    <p>
+        IMD warned of heatwave conditions at isolated places in the national capital, which recorded a maximum
+        temperature of 44.9 degrees Celsius a day earlier.
+
+        The maximum temperature in Delhi on Monday was five notches above the normal, while the minimum of 29.7 degrees
+        Celsius was two degrees above normal. On Tuesday, the minimum temperature is likely to be 30 degrees Celsius.
+    </p>
+
+    <!-- <x-product data-name="JavaScript" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/javascript.png" data-url="http://example.com/2"></x-product> -->
+    <script src="./cookies-popoverII.js"></script>
+    <script>
+   
+   function cookieListen(params) {
+       console.log(params);
+   }
+
+
+    </script>
+    <!-- <script src="./component.js" type="module"></script> -->
 </body>
+
 </html>
