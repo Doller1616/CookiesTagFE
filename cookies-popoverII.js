@@ -80,7 +80,13 @@ class CookiePopover extends HTMLElement {
     this.pTag_text.setAttribute('style', this.msgbox_p_style);
     aTag_btn.href = "javascript:void(0);"
     aTag_btn.addEventListener('click', this.handleAcceptCookie.bind(this));
-    aTag_btn.innerHTML = `<span>Accept <img src="../images/right-white-arrow.svg" alt=""></span>`;
+    aTag_btn.innerHTML = `<span>Accept &nbsp; <span>
+    <svg width="17" height="11" viewBox="0 0 17 11" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1.5 5.498h13.998M10.97 1l4.53 4.5-4.53 4.5"/>
+    </g> </svg> 
+        </span>
+    </span>`;
 
 
     action_div.appendChild(aTag_btn)
