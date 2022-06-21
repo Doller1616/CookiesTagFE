@@ -80,13 +80,11 @@ class CookiePopover extends HTMLElement {
     this.pTag_text.setAttribute('style', this.msgbox_p_style);
     aTag_btn.href = "javascript:void(0);"
     aTag_btn.addEventListener('click', this.handleAcceptCookie.bind(this));
-    aTag_btn.innerHTML = `<span>Accept &nbsp; <span>
+    aTag_btn.innerHTML = `<span>Accept &nbsp;
     <svg width="17" height="11" viewBox="0 0 17 11" xmlns="http://www.w3.org/2000/svg">
     <g stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
         <path d="M1.5 5.498h13.998M10.97 1l4.53 4.5-4.53 4.5"/>
-    </g> </svg> 
-        </span>
-    </span>`;
+    </g> </svg> </span>`;
 
 
     action_div.appendChild(aTag_btn)
@@ -105,6 +103,8 @@ class CookiePopover extends HTMLElement {
     shadow.appendChild(this.msgbox_div);
 
     this.setPopoverVisiblity();
+    // ON Screen reload Load preset style
+    this.mediaQueryCustomView();
     this.mediaQuery.addEventListener('change', this.mediaQueryCustomView.bind(this))
   }
 
@@ -161,7 +161,7 @@ class CookiePopover extends HTMLElement {
 
   mediaQueryCustomView(e){
 
-     if(e.matches){
+     if(e?.matches || window.innerWidth < 767){
 
       this.msgbox_div.style.padding = "16px 12px"; 
       this.msgbox_div.style.display = "block";
